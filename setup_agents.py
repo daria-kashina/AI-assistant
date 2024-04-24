@@ -5,10 +5,10 @@ from langchain_experimental.autonomous_agents import AutoGPT
 
 llm = GigaChat(
     verbose=True,
-    # temperature=0,
-    model="... big giga model ...",
+    temperature=0,
+    model="GigaChat",
     credentials=cred,
-    base_url=...,
+    # base_url=...,
     verify_ssl_certs=False,
     timeout=300,
     scope='GIGACHAT_API_CORP'
@@ -16,9 +16,9 @@ llm = GigaChat(
 agent = AutoGPT.from_llm_and_tools(
     ai_name="Гигачат",
     ai_role="Ассистент",
-    tools=tools,
+    # tools=tools,
     llm=llm,
-    memory=vectorstore.as_retriever(),
+    # memory=vectorstore.as_retriever(),
 )
 # Отладка модели
 agent.chain.verbose = True
