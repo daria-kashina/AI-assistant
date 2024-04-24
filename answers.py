@@ -1,10 +1,11 @@
+
 def standard_answers(input):
     message = str(input).lower()
 
-    if message in ('hello', 'hi', 'sup', 'привет', 'здравствуй'):
+    if message in ('привет', 'здравствуй'):
         return "Привет! "
 
-    if message in ('who are you', 'who are you?', 'кто ты', 'кто ты?'):
-        return "Я Эксперт по вопросам питания ChatGPT, помогаю с определением безопасности продуктов по их составу и даю рекомендации по питанию"
+    if message in ('ты кто?', 'who are you', 'who are you?', 'кто ты', 'кто ты?'):
+        return "Я AI-ассистент для научных исследований созданный с помощью фреймворка GigaChain."
 
     return ""
