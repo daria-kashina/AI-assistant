@@ -1,11 +1,11 @@
 from config import cred
-from gigachain_community.chat_models import GigaChat
-from gigachain.memory.chat_message_histories import FileChatMessageHistory
-from gigachain_expiremental.autonomous_agents import AutoGPT
+from langchain_community.chat_models import GigaChat
+from langchain_community.chat_message_histories import FileChatMessageHistory
+from langchain_experimental.autonomous_agents import AutoGPT
 
 llm = GigaChat(
     verbose=True,
-    temperature=0,
+    # temperature=0,
     model="... big giga model ...",
     credentials=cred,
     base_url=...,
