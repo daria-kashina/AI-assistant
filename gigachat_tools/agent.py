@@ -44,3 +44,26 @@ async def simple_agent(text, credentials, scope):
     # print(result)
 
     return result['result']
+
+
+class ScientificAIAgent:
+    def __init__(self):
+        self.credentials = os.environ['GIGACHAT_CRED']
+        self.embeddings = GigaChatEmbeddings(
+            credentials = self.credentials, 
+            verify_ssl_certs = False, 
+            scope = 'GIGACHAT_API_CORP')
+        self.llm = GigaChat(credentials = self.credentials, 
+            verify_ssl_certs = False, 
+            scope = 'GIGACHAT_API_CORP')
+
+    def response_to_user_request(self, user_id: int, user_text_request: str) -> str:
+        vectordb = Chroma(persist_directory="./data", embedding_function=self.embeddings)
+
+        qa_chain = RetrievalQA.from_chain_type(
+        llm=self.llm,
+        chain_type="stuff",
+        retriever=vectordb.as_retriever(search_kwargs={'k': 10}),
+        return_source_documents=True)
+        result = qa_chain.invoke({'query': user_text_request})
+        return result['result']

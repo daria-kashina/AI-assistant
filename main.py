@@ -3,7 +3,7 @@ import answers
 from dotenv import load_dotenv
 from telegram import InputTextMessageContent, BotCommand
 from telegram.ext import Application, ApplicationBuilder, MessageHandler, CommandHandler, filters
-from gigachat_tools.agent import simple_agent
+from gigachat_tools.agent import ScientificAIAgent
 
 
 class ScientificAssistantBot:
@@ -18,7 +18,7 @@ class ScientificAssistantBot:
             BotCommand(command='help', description="Помощь, описание."),
             BotCommand(command='start', description="Команда старт"),
         ]
-        self.gigachain_agent = simple_agent
+        self.gigachain_agent = ScientificAIAgent()
 
     @staticmethod
     async def start_command(update, context):
@@ -30,13 +30,15 @@ class ScientificAssistantBot:
         await update.message.reply_text("Привет задавай вопрос!")
 
     async def handle_message(self, update, context):
-        text = str(update.message.text).lower()
+        user_text_request = str(update.message.text).lower()
         # Проверяем, если есть ответ в заранее определенных ответах
-        response = answers.standard_answers(text)
+        response = answers.standard_answers(user_text_request)
 
         # Если ответ не найден, используем модель GigaChat для получения ответа
         if not response:
-            response = await self.gigachain_agent(text, credentials=os.environ['GIGACHAT_CRED'], scope='GIGACHAT_API_CORP')
+            response = self.gigachain_agent.response_to_user_request(
+                user_id=update.message.from_user['id'],
+                user_text_request=user_text_request)
 
         # Отправляем ответ пользователю
         await update.message.reply_text(response)
