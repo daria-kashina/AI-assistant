@@ -11,9 +11,6 @@ from dotenv import load_dotenv
 # Read .env file
 load_dotenv()
 
-# llm = GigaChat(credentials=os.environ['GIGACHAT_CRED'], 
-#     verify_ssl_certs=False, 
-#     streaming=True, scope='GIGACHAT_API_CORP')
 
 # Изменить encoding при необходимости
 loader = TextLoader(

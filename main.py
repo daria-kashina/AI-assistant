@@ -23,15 +23,14 @@ class ScientificAssistantBot:
     @staticmethod
     async def start_command(update, context):
         await update.message.reply_text(f"Привет {update.message.from_user.first_name}! " +
-                                        "Я AI-ассистент.")
+                                        "Я ИИ-ассистент, помогаю  в научной деятельности.")
 
     @staticmethod
     async def help_command(update, context):
-        await update.message.reply_text("Привет задавай вопрос!")
+        await update.message.reply_text("Привет, задавай вопрос!")
 
     async def handle_message(self, update, context):
         user_text_request = str(update.message.text).lower()
-        # Проверяем, если есть ответ в заранее определенных ответах
         response = answers.standard_answers(user_text_request)
 
         # Если ответ не найден, используем модель GigaChat для получения ответа
@@ -49,7 +48,6 @@ class ScientificAssistantBot:
 
     async def post_init(self, application: Application) -> None:
 
-        # Устанавливаем команды бота
         await application.bot.set_my_commands(self.commands)
 
     def start_bot(self):
@@ -58,7 +56,6 @@ class ScientificAssistantBot:
                 'start', self.start_command))
         self.application.add_handler(CommandHandler('help', self.help_command))
 
-        # static_handle_message = lambda update, context: self.handle_message(update, context)
         self.application.add_handler(
             MessageHandler(
                 filters.TEXT,
