@@ -5,8 +5,8 @@ from agent_diff import context_aware_agent
 
 load_dotenv()
 
-credentials=os.environ['GIGACHAT_CRED']
-scope='GIGACHAT_API_CORP'
+credentials = os.environ['GIGACHAT_CRED']
+scope = 'GIGACHAT_API_CORP'
 
 
 async def interact_with_agent():

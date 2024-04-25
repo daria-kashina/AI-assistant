@@ -5,7 +5,10 @@ from langchain.chat_models.gigachat import GigaChat
 # Авторизация в сервисе GigaChat
 cred = 'Yjg4MTQzMmUtNDAwMS00NDk0LThjOGUtNmU5ZWQ2YzQ4NDQ2OmQ4MWMxZGZiLTFmNGYtNDk5NS05OGQzLTBiMzYyYWJmNjk3OA=='
 
-chat = GigaChat(credentials=cred, verify_ssl_certs=False, scope='GIGACHAT_API_CORP')
+chat = GigaChat(
+    credentials=cred,
+    verify_ssl_certs=False,
+    scope='GIGACHAT_API_CORP')
 
 messages = [
     SystemMessage(
@@ -13,7 +16,7 @@ messages = [
     )
 ]
 
-while(True):
+while (True):
     user_input = input("User: ")
     messages.append(HumanMessage(content=user_input))
     res = chat(messages)

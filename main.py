@@ -27,7 +27,9 @@ class ScientificAssistantBot:
 
     @staticmethod
     async def help_command(update, context):
-        await update.message.reply_text("Привет, задавай вопрос!")
+        await update.message.reply_text("Вы можете задать интересующий вопрос по \
+            интесующей Вас тематике, а я попробую найти ответ в своей базе данных или \
+            обращусь за ответом к GigaChat.")
 
     async def handle_message(self, update, context):
         user_text_request = str(update.message.text).lower()
@@ -39,7 +41,6 @@ class ScientificAssistantBot:
                 user_id=update.message.from_user['id'],
                 user_text_request=user_text_request)
 
-        # Отправляем ответ пользователю
         await update.message.reply_text(response)
 
     @staticmethod
