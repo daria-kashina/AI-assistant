@@ -36,7 +36,7 @@ class ScientificAssistantBot:
 
         # Если ответ не найден, используем модель GigaChat для получения ответа
         if not response:
-            response = await self.gigachain_agent(credentials=os.environ['GIGACHAT_CRED'], scope='GIGACHAT_API_CORP')
+            response = await self.gigachain_agent(text, credentials=os.environ['GIGACHAT_CRED'], scope='GIGACHAT_API_CORP')
 
         # Отправляем ответ пользователю
         await update.message.reply_text(response)
