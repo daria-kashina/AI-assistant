@@ -35,7 +35,7 @@
 Демонстрация готового продукта:  
 
 - [Telegram bot &#34;ScientificAIConsultantBot&#34;](https://t.me/ScientificAIConsultantBot)
-- Презентация[key](https://disk.yandex.ru/d/0ypxH6_8hkusaw)/[pdf](https://disk.yandex.ru/i/0wYMAUrQsLsgdQ)
+- Презентация [key](https://disk.yandex.ru/d/0ypxH6_8hkusaw)/[pdf](https://disk.yandex.ru/i/0wYMAUrQsLsgdQ)
 - [Видео-демонстрация](https://disk.yandex.ru/i/XSB-jRQTC5M1pQ)
 
 ИИ-ассистент реализован в виде бота, открывается по [ссылке](https://t.me/ScientificAIConsultantBot) и запускается командой */start*. 
