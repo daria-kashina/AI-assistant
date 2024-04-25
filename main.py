@@ -1,8 +1,11 @@
 import os
-import answers
+
 from dotenv import load_dotenv
-from telegram import InputTextMessageContent, BotCommand
-from telegram.ext import Application, ApplicationBuilder, MessageHandler, CommandHandler, filters
+from telegram import BotCommand, InputTextMessageContent
+from telegram.ext import (Application, ApplicationBuilder, CommandHandler,
+                          MessageHandler, filters)
+
+import answers
 from gigachat_tools.agent import ScientificAIAgent
 
 
@@ -27,8 +30,8 @@ class ScientificAssistantBot:
 
     @staticmethod
     async def help_command(update, context):
-        await update.message.reply_text("Вы можете задать интересующий вопрос по \
-            интесующей Вас тематике, а я попробую найти ответ в своей базе данных или \
+        await update.message.reply_text("Вы можете задать вопрос по интесующей \
+            Вас тематике, а я попробую найти ответ в своей базе данных или \
             обращусь за ответом к GigaChat.")
 
     async def handle_message(self, update, context):

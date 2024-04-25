@@ -1,12 +1,12 @@
 import os
+
+import numpy as np
 from dotenv import load_dotenv
-from gensim import corpora
-from gensim import models
+from gensim import corpora, models
+from langchain.chains import RetrievalQA
+from langchain.vectorstores.chroma import Chroma
 from langchain_community.chat_models import GigaChat
 from langchain_community.embeddings.gigachat import GigaChatEmbeddings
-from langchain.vectorstores.chroma import Chroma
-from langchain.chains import RetrievalQA
-import numpy as np
 
 load_dotenv()
 

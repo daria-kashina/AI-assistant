@@ -1,12 +1,12 @@
 import os
+
 from dotenv import load_dotenv
-from langchain_community.chat_models import GigaChat
-from langchain_community.embeddings.gigachat import GigaChatEmbeddings
+from langchain.chains import RetrievalQA
+from langchain.prompts import load_prompt
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.vectorstores.chroma import Chroma
-from langchain.chains import RetrievalQA
-
-from langchain.prompts import load_prompt
+from langchain_community.chat_models import GigaChat
+from langchain_community.embeddings.gigachat import GigaChatEmbeddings
 
 load_dotenv()
 

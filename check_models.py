@@ -1,5 +1,6 @@
-from config import cred
 from langchain_community.chat_models import GigaChat
+
+from config import cred
 
 chat = GigaChat(
     credentials=cred,

@@ -1,6 +1,6 @@
 # Работа с чатом через GigaChain
-from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models.gigachat import GigaChat
+from langchain.schema import HumanMessage, SystemMessage
 
 # Авторизация в сервисе GigaChat
 cred = 'Yjg4MTQzMmUtNDAwMS00NDk0LThjOGUtNmU5ZWQ2YzQ4NDQ2OmQ4MWMxZGZiLTFmNGYtNDk5NS05OGQzLTBiMzYyYWJmNjk3OA=='

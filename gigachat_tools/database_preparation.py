@@ -1,13 +1,14 @@
 import os
-from chromadb.config import Settings
 
+from chromadb.config import Settings
+from dotenv import load_dotenv
 from langchain.chat_models.gigachat import GigaChat
-from langchain.schema import HumanMessage
 from langchain.document_loaders.text import TextLoader
+from langchain.schema import HumanMessage
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.chroma import Chroma
 from langchain_community.embeddings.gigachat import GigaChatEmbeddings
-from dotenv import load_dotenv
+
 # Read .env file
 load_dotenv()
 
@@ -23,11 +24,7 @@ text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=200,
     chunk_overlap=0,
 )
-# print(documents)
 documents = text_splitter.split_documents(documents)
-# print(f"Total documents: {len(documents)}")
-print(documents)
-
 
 embeddings = GigaChatEmbeddings(
     credentials=os.environ['GIGACHAT_CRED'],
