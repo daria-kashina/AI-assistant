@@ -11,14 +11,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 embeddings = GigaChatEmbeddings(
-    credentials=os.environ['GIGACHAT_CRED'], 
+    credentials=os.environ['GIGACHAT_CRED'],
     verify_ssl_certs=False, scope='GIGACHAT_API_CORP'
 )
 
 vectordb = Chroma(persist_directory="./data", embedding_function=embeddings)
 
-llm = GigaChat(credentials=os.environ['GIGACHAT_CRED'], 
-    verify_ssl_certs=False, scope='GIGACHAT_API_CORP')
+llm = GigaChat(credentials=os.environ['GIGACHAT_CRED'],
+               verify_ssl_certs=False, scope='GIGACHAT_API_CORP')
 
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
@@ -33,4 +33,4 @@ result = qa_chain.invoke({'query': "В каком году изобрели те
     гидрофуранатетрааммония678триуксуснокислого? И где?"})
 
 
-print("result:  ",result['result'])
+print("result:  ", result['result'])

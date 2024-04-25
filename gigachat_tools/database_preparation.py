@@ -14,9 +14,9 @@ load_dotenv()
 
 # Изменить encoding при необходимости
 loader = TextLoader(
-    "./example.txt", 
+    "./example.txt",
     encoding='utf-8'
-    )
+)
 documents = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(
@@ -30,7 +30,7 @@ print(documents)
 
 
 embeddings = GigaChatEmbeddings(
-    credentials=os.environ['GIGACHAT_CRED'], 
+    credentials=os.environ['GIGACHAT_CRED'],
     verify_ssl_certs=False, scope='GIGACHAT_API_CORP'
 )
 

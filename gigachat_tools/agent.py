@@ -10,20 +10,23 @@ from langchain.prompts import load_prompt
 
 load_dotenv()
 
+
 class ScientificAIAgent:
     def __init__(self):
         self.credentials = os.environ['GIGACHAT_CRED']
         self.embeddings = GigaChatEmbeddings(
-            credentials = self.credentials, 
-            verify_ssl_certs = False, 
-            scope = 'GIGACHAT_API_CORP')
-        self.llm = GigaChat(credentials = self.credentials, 
-            verify_ssl_certs = False, 
-            scope = 'GIGACHAT_API_CORP')
+            credentials=self.credentials,
+            verify_ssl_certs=False,
+            scope='GIGACHAT_API_CORP')
+        self.llm = GigaChat(credentials=self.credentials,
+                            verify_ssl_certs=False,
+                            scope='GIGACHAT_API_CORP')
 
-
-    def response_to_user_request(self, user_id: int, user_text_request: str) -> str:
-        vectordb = Chroma(persist_directory="./data", embedding_function=self.embeddings)
+    def response_to_user_request(
+            self, user_id: int, user_text_request: str) -> str:
+        vectordb = Chroma(
+            persist_directory="./data",
+            embedding_function=self.embeddings)
 
         qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm,
