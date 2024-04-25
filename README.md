@@ -30,9 +30,8 @@ Linked to "AI-assistant development" project
 
 </details>
 
-### Команда "EcoVictory"
+### Команда "56"
 
 - **Дарья Кашина**
 - **Алексей Фирстов** 
 - **Александр Иваненков** 
-
