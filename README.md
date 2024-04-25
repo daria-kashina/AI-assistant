@@ -8,7 +8,7 @@ Linked to "AI-assistant development" project
 
 Результаты проекта:
 
-- [Telegram bot &#34;&#34;]()
+- [Telegram bot &#34;ScientificAIConsultantBot&#34;](https://t.me/ScientificAIConsultantBot)
 - [Презентация]()
 - [Видео-демонстрация]()
 
@@ -23,6 +23,12 @@ Linked to "AI-assistant development" project
 
 </details>
 
+<details><summary><b>Запуск ии-ассистента </b></summary>
+
+ИИ-ассистент  реализован в виде бота, открывается по ссылке и запускается нажатием кнопки *"start"*. 
+Также дополнительно можно узнать зачем бот по команде *"help".*
+
+</details>
 
 ### Команда "EcoVictory"
 
