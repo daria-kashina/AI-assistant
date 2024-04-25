@@ -14,7 +14,7 @@ llm = GigaChat(credentials=cred, verify_ssl_certs=False, streaming=True, scope='
 # Изменить encoding при необходимости
 loader = TextLoader(
     "/Users/darakasina/Desktop/DS/deepagents_hackaton/AI-assistant/example2.txt", 
-    encoding='cp1252'
+    encoding='utf-8'
     )
 documents = loader.load()
 
