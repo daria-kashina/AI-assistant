@@ -51,4 +51,17 @@
 
 </details>
 
-
+<details><summary><b>Структура</b></summary>  
+  
+Prod:  
+[agent.py](https://github.com/daria-kashina/AI-assistant/blob/main/gigachat_tools/agent.py) - скрипт запуска агента  
+[database_preparation.py](https://github.com/daria-kashina/AI-assistant/blob/main/gigachat_tools/database_preparation.py) - скрипт для подготовки векторной БД  
+[example.txt](https://github.com/daria-kashina/AI-assistant/blob/main/gigachat_tools/example.txt) - текстовый файл для наполнения БД  
+[main.py](https://github.com/daria-kashina/AI-assistant/blob/main/main.py) - скрипт запуска ИИ-ассистента в Telegram  
+[requirements.txt](https://github.com/daria-kashina/AI-assistant/blob/main/requirements.txt) - файл с зависимостями проекта  
+  
+Файлы наработок (не используются в текущей prod-версии):  
+[agent_diff.py](https://github.com/daria-kashina/AI-assistant/blob/main/agent_diff.py) - агент с попыткой добавления учета контекста диалога и поиска ближайшего подходящего ответа в векторной БД  
+[agent_check.py](https://github.com/daria-kashina/AI-assistant/blob/main/agent_check.py) - проверка agent_diff.py в терминале  
+  
+</details>
